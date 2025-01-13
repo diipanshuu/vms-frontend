@@ -12,7 +12,14 @@ import SignUp from '@/components/routes/auth/sign-up/sign-up'
 import SignUpEmailPassword from '@/components/routes/auth/sign-up/sign-up-email-password'
 import SignUpMagicLink from '@/components/routes/auth/sign-up/sign-up-magic-link'
 import SignUpSecurityKey from '@/components/routes/auth/sign-up/sign-up-security-key'
-import { Route, Routes } from 'react-router-dom'
+// import { Route, Routes } from 'react-router-dom'
+
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from '@/pages/HomePage';
+import VisitorPage from '@/pages/VisitorPage';
+import NotFoundPage from '@/pages/NotFoundPage';
 
 function App() {
   return (
@@ -28,6 +35,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/storage" element={<Storage />} />
+        {/* New Routes */}
+        <Route path="/visitors" element={<HomePage />} />
+        <Route path="/visitors/:id" element={<VisitorPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
 
       <Route path="/sign-in">
