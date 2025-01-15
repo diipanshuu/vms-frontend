@@ -17,8 +17,10 @@ import SignUpSecurityKey from '@/components/routes/auth/sign-up/sign-up-security
 // src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from '@/pages/HomePage';
 import VisitorPage from '@/pages/VisitorPage';
+import VisitorTablePage from '@/pages/VisitorTablePage';
+import AddVisitorPage from '@/pages/AddVisitorPage';
+import EditVisitorPage from './pages/EditVisitorPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 
 function App() {
@@ -36,10 +38,13 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/storage" element={<Storage />} />
         {/* New Routes */}
-        <Route path="/visitors" element={<HomePage />} />
         <Route path="/visitors/:id" element={<VisitorPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
+
+      <Route path="/visitor-table" element={<VisitorTablePage />} />
+      <Route path="/edit-visitor/:id" element={<EditVisitorPage />} />
+      <Route path="/add-visitor" element={<AddVisitorPage />} />
 
       <Route path="/sign-in">
         <Route path="/sign-in/" element={<SignIn />} />

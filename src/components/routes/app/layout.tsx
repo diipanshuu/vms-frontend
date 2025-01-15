@@ -1,26 +1,27 @@
-import Nhost from '@/assets/nhost.svg'
-import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { useSignOut } from '@nhost/react'
-import { Archive, LogOut, PanelLeft, User } from 'lucide-react'
-import { useState } from 'react'
-import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { useSignOut } from '@nhost/react';
+import { Archive, LogOut, PanelLeft, User } from 'lucide-react';
+import Nhost from '@/assets/nhost.svg';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useState } from 'react';
 
 export default function Layout() {
-  const { signOut } = useSignOut()
-  const [showMobileNav, setShowMobileNav] = useState(false)
-  const navigate = useNavigate()
+  const { signOut } = useSignOut();
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignOut = async () => {
-    await signOut()
-    navigate('/')
-  }
+    await signOut();
+    navigate('/');
+  };
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-muted/40">
-      <aside className="fixed inset-y-0 left-0 z-10 flex-col hidden border-r w-14 bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+    <div className="app-container">
+      <aside className="sidebar">
+        <nav className="flex flex-col items-center gap-4 px-2 py-5">
           <Tooltip delayDuration={100}>
             <TooltipTrigger asChild>
               <NavLink
@@ -75,7 +76,7 @@ export default function Layout() {
           </Tooltip>
         </nav>
       </aside>
-      <div className="flex flex-col items-center sm:gap-4 sm:py-4 sm:pl-14">
+      <div className="main-content">
         <header className="sticky top-0 z-30 flex items-center w-full gap-4 px-4 border-b h-14 bg-background sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
           <Sheet open={showMobileNav} onOpenChange={(open) => setShowMobileNav(open)}>
             <SheetTrigger asChild>
@@ -121,5 +122,5 @@ export default function Layout() {
         </main>
       </div>
     </div>
-  )
+  );
 }

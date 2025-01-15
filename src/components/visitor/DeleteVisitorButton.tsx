@@ -17,7 +17,7 @@ const DeleteVisitorButton: React.FC<DeleteVisitorButtonProps> = ({ visitorId, on
     }
   };
 
-  return <button onClick={handleDelete}>Delete</button>;
+  return <button onClick={handleDelete}>Delete Visitor</button>;
 };
 
 export default DeleteVisitorButton;

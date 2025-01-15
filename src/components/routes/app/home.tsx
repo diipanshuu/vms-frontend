@@ -1,14 +1,23 @@
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import './HomePage.css'; // Import the CSS file for styling
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>Home page</CardTitle>
-        <CardDescription>
-          You are authenticated. You have now access to the authorised part of the application.
-        </CardDescription>
-      </CardHeader>
-    </Card>
-  )
+    <div className="vibrant-bg full-width">
+      <Card>
+        <CardHeader>
+          <CardTitle>Welcome!</CardTitle>
+        </CardHeader>
+        <div className="card-content">
+          <button onClick={() => navigate('/visitor-table')} className="dashboard-button">
+            Go to Dashboard
+          </button>
+        </div>
+      </Card>
+    </div>
+  );
 }

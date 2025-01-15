@@ -23,7 +23,7 @@ export const createVisitor = async (visitor: any) => {
 };
 
 export const updateVisitor = async (id: string, visitor: any) => {
-  const response = await axios.put(`${API_BASE_URL}/${id}`, visitor);
+  const response = await axios.patch(`${API_BASE_URL}/${id}`, visitor);
   return response.data;
 };
 

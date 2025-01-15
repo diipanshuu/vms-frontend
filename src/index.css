@@ -1,7 +1,9 @@
+/* Tailwind CSS Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom CSS Variables */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,6 +61,7 @@
   }
 }
 
+/* Base Styles */
 @layer base {
   * {
     @apply border-border;
@@ -66,4 +69,196 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Global Styles */
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 50px; /* Adjust the width as needed */
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+}
+
+/* Visitor List Styles */
+.visitor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.visitor-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.visitor-item h3 {
+  margin-top: 0;
+}
+
+.visitor-item p {
+  margin: 5px 0;
+}
+
+/* Visitor Table Page Styles */
+.visitor-table-page {
+  padding: 20px;
+}
+
+.visitor-table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.visitor-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px; /* Adjust this value based on your content */
+}
+
+.visitor-table th,
+.visitor-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.visitor-table th {
+  background-color: #f2f2f2;
+}
+
+.visitor-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+
+/* New styles */
+/* Dynamic Background Styles */
+.vibrant-bg {
+  position: relative;
+  background: linear-gradient(270deg, #6E40C9, #2D9CDB, #27AE60, #F2C94C, #EB5757);
+  background-size: 400% 400%;
+  animation: gradient-shift 10s ease infinite;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Animation for Background Shift */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Translucent Card */
+.translucent-card {
+  background: rgba(255, 255, 255, 0.7); /* Light theme */
+  color: var(--foreground);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius, 8px);
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Dark Theme Variant */
+.dark .translucent-card {
+  background: rgba(34, 34, 34, 0.9); /* Dark theme */
+  color: var(--foreground);
+}
+
+/* Glowing Border Effect */
+.glow-border {
+  position: relative;
+  border-radius: var(--radius, 8px);
+  padding: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, #6E40C9, #2D9CDB, #27AE60, #F2C94C, #EB5757) border-box;
+}
+
+/* Full-Width Container */
+.full-width {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Vibrant Table */
+.vibrant-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.vibrant-table th,
+.vibrant-table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.5); /* Light theme */
+}
+
+.dark .vibrant-table th,
+.dark .vibrant-table td {
+  background-color: rgba(34, 34, 34, 0.9); /* Dark theme */
+}
+
+.vibrant-table th {
+  background: linear-gradient(270deg, #6E40C9, #2D9CDB);
+  color: white;
+  text-transform: uppercase;
+}
+
+.vibrant-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2); /* Light theme */
+}
+
+.dark .vibrant-table tr:nth-child(even) {
+  background-color: rgba(34, 34, 34, 0.6); /* Dark theme */
 }
