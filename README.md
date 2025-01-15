@@ -1,9 +1,54 @@
-# Nhost React Apollo Template
+# Visitor Management System (VMS) Frontend
 
-This template, bootstrapped with [`create-react-app`](https://create-react-app.dev), offers a robust starting point for your React project using [Nhost](https://nhost.io) as the backend,complete with essential features to accelerate your development process. For a step-by-step guide on how to build on top of this template, refer to the [quickstart guide](https://docs.nhost.io/guides/quickstarts/react).
+This repository contains the frontend for the **Visitor Management System (VMS)**, a React-based application that enables managing visitor data via a user-friendly interface. It connects with the backend API to handle visitor check-ins, updates, and data management in real-time.
 
-For more information, check out these resources:
+## Features
+- User-friendly interface for adding, updating, and viewing visitors.
+- Integration with the backend API.
+- Built with React and styled using Tailwind CSS.
 
-- [Nhost](https://nhost.io)
-- [Documentation](https://docs.nhost.io)
-- [React Quickstart Guide](https://docs.nhost.io/guides/quickstarts/react)
+## Getting Started
+
+### Prerequisites
+- **Node.js** (version 14 or higher)
+- **npm** or **yarn**
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/diipanshuu/vms-frontend.git
+   cd vms-frontend
+   
+2. Install dependencies:
+  npm install
+  # or using yarn
+  yarn install
+
+3. Create a .env file and add:
+   REACT_APP_NHOST_BACKEND_URL=<your_nhost_backend_url>
+   
+### Running the Application
+To start the development server:
+  npm start
+  # or using yarn
+  yarn start
+
+### Building for Production
+To create a production build:
+  npm run build
+
+### Deploying
+Deploy on services like Netlify or Vercel by linking your GitHub repository.
+
+### Technologies
+ - React: Frontend framework
+ - Tailwind CSS: Styling framework
+
+### License
+MIT License
+
+
+This `README.md` provides installation, usage, and deployment instructions.
+
+
+
